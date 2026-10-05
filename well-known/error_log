@@ -1,0 +1,275 @@
+[14-Aug-2026 10:34:31 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(476): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(344): Composer\Autoload\includeFile()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[14-Aug-2026 10:34:31 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[14-Aug-2026 10:38:22 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(476): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(344): Composer\Autoload\includeFile()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[14-Aug-2026 10:38:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[14-Aug-2026 21:17:35 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(476): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(344): Composer\Autoload\includeFile()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[14-Aug-2026 21:17:35 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[14-Aug-2026 21:23:15 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(476): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(344): Composer\Autoload\includeFile()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[14-Aug-2026 21:23:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[14-Aug-2026 21:43:18 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(476): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(344): Composer\Autoload\includeFile()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[14-Aug-2026 21:43:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[22-Aug-2026 19:14:23 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(576): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[22-Aug-2026 19:14:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[22-Aug-2026 19:15:11 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(576): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[22-Aug-2026 19:15:11 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[22-Aug-2026 19:18:03 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(576): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[22-Aug-2026 19:18:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[22-Aug-2026 19:22:51 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(576): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[22-Aug-2026 19:22:51 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[22-Aug-2026 19:23:26 UTC] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(576): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[22-Aug-2026 19:23:26 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
+[30-Aug-2026 14:15:13 Asia/Dhaka] PHP Fatal error:  During inheritance of ArrayAccess: Uncaught ErrorException: Return type of Illuminate\Support\Collection::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php:1401
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php(11): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(576): include('/home/httsysco/...')
+#2 /home/httsysco/public_html/test.httsys.com/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php(15): Composer\Autoload\ClassLoader->loadClass()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(89): collect()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/PackageManifest.php(78): Illuminate\Foundation\PackageManifest->config()
+#6 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/RegisterFacades.php(26): Illuminate\Foundation\PackageManifest->aliases()
+#7 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(237): Illuminate\Foundation\Bootstrap\RegisterFacades->bootstrap()
+#8 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(310): Illuminate\Foundation\Application->bootstrapWith()
+#9 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(127): Illuminate\Foundation\Console\Kernel->bootstrap()
+#10 /home/httsysco/public_html/test.httsys.com/artisan(35): Illuminate\Foundation\Console\Kernel->handle()
+#11 {main} in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/Collection.php on line 11
+[30-Aug-2026 14:15:13 Asia/Dhaka] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Collection" not found in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php:15
+Stack trace:
+#0 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(24): collect()
+#1 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Support/Traits/ReflectsClosures.php(43): Illuminate\Foundation\Exceptions\ReportableHandler->closureParameterTypes()
+#2 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/ReportableHandler.php(62): Illuminate\Foundation\Exceptions\ReportableHandler->firstClosureParameterType()
+#3 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(223): Illuminate\Foundation\Exceptions\ReportableHandler->handles()
+#4 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(88): Illuminate\Foundation\Exceptions\Handler->report()
+#5 /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(130): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#6 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 {main}
+  thrown in /home/httsysco/public_html/test.httsys.com/vendor/laravel/framework/src/Illuminate/Collections/helpers.php on line 15
