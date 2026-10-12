@@ -16,10 +16,13 @@ class CurrencyExchangeController extends Controller
      */
     public function index(Request $request)
     {
-        $listings = CurrencyListing::with('seller')
+                $listings = CurrencyListing::with('seller')
             ->where('status', 'active')
             ->when($request->filled('currency'), function ($q) use ($request) {
                 $q->where('currency', $request->currency);
+            })
+            ->when($request->filled('q'), function ($q) use ($request) {
+                $q->where('currency', 'like', '%' . $request->q . '%');
             })
             ->orderByDesc('id')
             ->paginate(20)

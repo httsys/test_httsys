@@ -46,6 +46,8 @@ self.addEventListener('fetch', function (event) {
 
     if (
         url.pathname.startsWith('/admin') ||
+        url.pathname.startsWith('/m/') ||
+        url.pathname.startsWith('/public/m/') ||
         url.pathname.startsWith('/login') ||
         url.pathname.startsWith('/register') ||
         url.pathname.startsWith('/logout') ||

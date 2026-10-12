@@ -53,8 +53,10 @@ class MiniGameController extends Controller
      */
     protected function ownPlay($id)
     {
+        // Tic Tac Toe plays are settled by the match itself, never by the ad/maths pages.
         return GamePlay::where('id', $id)
             ->where('user_id', Auth::id())
+            ->where('game_key', '!=', 'tic_tac_toe')
             ->firstOrFail();
     }
 
@@ -102,7 +104,7 @@ class MiniGameController extends Controller
         $setting = GameSetting::forGame($key);
 
         $result = null;
-        if ($user && $request->filled('play')) {
+        if ($user && $key !== 'tic_tac_toe' && $request->filled('play')) {
             $play = GamePlay::where('id', (int) $request->input('play'))
                 ->where('user_id', $user->id)
                 ->where('game_key', $key)
@@ -119,8 +121,14 @@ class MiniGameController extends Controller
             'flip_coin' => 'games.coin',
             'three_numbers' => 'games.slot',
             'up_down' => 'games.trade',
+            'tic_tac_toe' => 'games.tictactoe',
         ];
         $view = $views[$key];
+
+        // Tic Tac Toe needs a few extra values (points on offer, unfinished match, ...).
+        $extra = $key === 'tic_tac_toe'
+            ? app(\App\Services\TicTacToeService::class)->pageData($user, $setting)
+            : [];
 
         $points = null;
         if ($user) {
@@ -137,7 +145,7 @@ class MiniGameController extends Controller
             'result' => $result,
             'points' => $points,
             'isGuest' => ! $user,
-        ]));
+        ], $extra));
     }
 
     /**
@@ -147,7 +155,8 @@ class MiniGameController extends Controller
     public function start(Request $request, $slug)
     {
         $key = GameSetting::keyFromSlug($slug);
-        if (! $key) {
+        // Tic Tac Toe is started through TicTacToeController (a real match decides the result).
+        if (! $key || $key === 'tic_tac_toe') {
             return response()->json(['ok' => false, 'message' => 'Game not found.'], 404);
         }
 

@@ -88,7 +88,7 @@
         </div>
 
         <div class="actions">
-            <a href="{{ $url }}" download class="btn btn-primary">Download</a>
+            <a href="{{ $url }}" download="{{ $photo->file }}" class="btn btn-primary">Download</a>
             <button type="button" class="btn btn-secondary" onclick="copyLink(this)">Copy Link</button>
         </div>
     </div>

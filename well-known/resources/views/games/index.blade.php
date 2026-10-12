@@ -48,6 +48,14 @@
                             <div class="mg-mini-coin">$</div>
                         @elseif ($card['key'] === 'three_numbers')
                             <div class="mg-mini-slot"><span>1</span><span>0</span><span>0</span></div>
+                        @elseif ($card['key'] === 'tic_tac_toe')
+                            <svg class="mg-mini-chart" style="width:130px;height:130px;" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M40,8 V112 M80,8 V112 M8,40 H112 M8,80 H112" stroke="#3b4256" stroke-width="5" stroke-linecap="round" fill="none"/>
+                                <path d="M14,14 L34,34 M34,14 L14,34" stroke="#ff2e57" stroke-width="6" stroke-linecap="round"/>
+                                <circle cx="60" cy="60" r="13" fill="none" stroke="#00b5ff" stroke-width="6"/>
+                                <path d="M86,86 L106,106 M106,86 L86,106" stroke="#ff2e57" stroke-width="6" stroke-linecap="round"/>
+                                <circle cx="100" cy="20" r="13" fill="none" stroke="#00b5ff" stroke-width="6"/>
+                            </svg>
                         @else
                             <svg class="mg-mini-chart" viewBox="0 0 160 110" xmlns="http://www.w3.org/2000/svg">
                                 <defs><linearGradient id="mgCg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00b5ff" stop-opacity=".55"/><stop offset="1" stop-color="#00b5ff" stop-opacity="0"/></linearGradient></defs>

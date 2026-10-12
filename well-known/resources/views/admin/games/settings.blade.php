@@ -42,6 +42,11 @@
                         </div>
                         <div class="card-body">
 
+                            @if ($key === 'tic_tac_toe')
+                                {{-- Tic Tac Toe has no advertisement page and no random win rate: the match decides. --}}
+                                <input type="hidden" name="settings[{{ $key }}][win_percent]" value="{{ $s->win_percent }}">
+                                <input type="hidden" name="settings[{{ $key }}][win_block]" value="{{ $s->blockSize() }}">
+                            @else
                             <div class="form-group">
                                 <div class="custom-control custom-switch">
                                     <input type="checkbox" class="custom-control-input" id="showad_{{ $key }}" name="settings[{{ $key }}][show_ad]" value="1" {{ old('settings.' . $key . '.show_ad', $s->showsAd()) ? 'checked' : '' }}>
@@ -67,6 +72,7 @@
                                     <strong>2 out of 5</strong> = 2 wins and 3 losses in every 5 plays. The order inside the group is random.
                                 </small>
                             </div>
+                            @endif
 
                             <div class="form-group">
                                 <label for="limit_{{ $key }}">Plays allowed per hour (per user)</label>
@@ -84,6 +90,68 @@
                                         <input type="number" min="0" step="1" required class="form-control" id="points_{{ $key }}" name="settings[{{ $key }}][points_per_win]" value="{{ old('settings.' . $key . '.points_per_win', $s->points_per_win) }}">
                                         <div class="input-group-append"><span class="input-group-text">point(s)</span></div>
                                     </div>
+                                </div>
+                            @endif
+
+                            @if ($key === 'tic_tac_toe')
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="points_{{ $key }}">Points for beating the computer</label>
+                                        <div class="input-group">
+                                            <input type="number" min="0" step="1" required class="form-control" id="points_{{ $key }}" name="settings[{{ $key }}][points_per_win]" value="{{ old('settings.' . $key . '.points_per_win', $s->points_per_win) }}">
+                                            <div class="input-group-append"><span class="input-group-text">point(s)</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="fee_{{ $key }}">Points for winning an online match</label>
+                                        <div class="input-group">
+                                            <input type="number" min="0" max="100" step="1" class="form-control" id="fee_{{ $key }}" name="settings[{{ $key }}][online_fee_percent]" value="{{ old('settings.' . $key . '.online_fee_percent', $s->option('online_fee_percent', 10)) }}">
+                                            <div class="input-group-append"><span class="input-group-text">% fee</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <small class="form-text text-muted" style="margin-top:-6px; margin-bottom:14px;">
+                                    <strong>Online matches are played for points.</strong> The player who opens the room chooses how many points to play for and the friend must put in the same amount.
+                                    The winner receives both players' points together <strong>minus this percent</strong> (the site keeps it).
+                                    Example with <strong>10%</strong>: each player puts in 10 points &rarr; pot 20 &rarr; the site keeps 2 &rarr; the winner gets <strong>18</strong>. With <strong>0%</strong> the winner gets the full 20.
+                                    A draw gives everybody their own points back. If nobody joins the room, the host's points are returned.
+                                </small>
+                                <div class="form-group">
+                                    <label for="mistake_{{ $key }}">Computer mistakes</label>
+                                    <div class="input-group">
+                                        <input type="number" min="0" max="100" step="1" class="form-control" id="mistake_{{ $key }}" name="settings[{{ $key }}][ai_mistake_percent]" value="{{ old('settings.' . $key . '.ai_mistake_percent', $s->option('ai_mistake_percent', 25)) }}">
+                                        <div class="input-group-append"><span class="input-group-text">% of its moves are random</span></div>
+                                    </div>
+                                    <small class="form-text text-muted">
+                                        This is how easy the computer is to beat. <strong>0</strong> = it never makes a mistake (on the 3&times;3 grid nobody can beat it, the best a player can get is a draw).
+                                        <strong>25</strong> = about one move in four is random. <strong>100</strong> = it plays completely randomly.
+                                    </small>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="movesec_{{ $key }}">Time for each online move</label>
+                                        <div class="input-group">
+                                            <input type="number" min="10" max="600" step="1" class="form-control" id="movesec_{{ $key }}" name="settings[{{ $key }}][move_seconds]" value="{{ old('settings.' . $key . '.move_seconds', $s->option('move_seconds', 60)) }}">
+                                            <div class="input-group-append"><span class="input-group-text">seconds</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="roommin_{{ $key }}">Room waits for a friend</label>
+                                        <div class="input-group">
+                                            <input type="number" min="1" max="120" step="1" class="form-control" id="roommin_{{ $key }}" name="settings[{{ $key }}][room_minutes]" value="{{ old('settings.' . $key . '.room_minutes', $s->option('room_minutes', 10)) }}">
+                                            <div class="input-group-append"><span class="input-group-text">minutes</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="sameip_{{ $key }}" name="settings[{{ $key }}][block_same_ip]" value="1" {{ old('settings.' . $key . '.block_same_ip', $s->option('block_same_ip', false)) ? 'checked' : '' }}>
+                                        <label class="custom-control-label" for="sameip_{{ $key }}">Do not allow two players on the same network</label>
+                                    </div>
+                                    <small class="form-text text-muted">
+                                        Stops one person opening two accounts on the same Wi-Fi to win points from himself. Turn it off if friends who share a home Wi-Fi should be able to play each other.
+                                        A player who does not move within the time above loses the match (and the other player wins the pot). Playing on the same device (offline) never uses or gives points.
+                                    </small>
                                 </div>
                             @endif
 

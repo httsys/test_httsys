@@ -12,6 +12,7 @@ class EncryptCookies extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        // Private visitor id used to bind random media links (/m/...) to one browser.
+        'mvid',
     ];
 }

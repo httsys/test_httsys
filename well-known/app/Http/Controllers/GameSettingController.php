@@ -37,6 +37,10 @@ class GameSettingController extends Controller
             'settings.*.win_block' => 'required|integer|min:1|max:200',
             'settings.*.hourly_limit' => 'required|integer|min:0|max:100000',
             'settings.*.points_per_win' => 'nullable|integer|min:0|max:100000',
+            'settings.tic_tac_toe.online_fee_percent' => 'nullable|integer|min:0|max:100',
+            'settings.tic_tac_toe.ai_mistake_percent' => 'nullable|integer|min:0|max:100',
+            'settings.tic_tac_toe.move_seconds' => 'nullable|integer|min:10|max:600',
+            'settings.tic_tac_toe.room_minutes' => 'nullable|integer|min:1|max:120',
             'settings.three_numbers.prizes' => 'nullable|string|max:500',
             'settings.up_down.min_stake' => 'nullable|integer|min:1|max:1000000',
             'settings.up_down.max_stake' => 'nullable|integer|min:1|max:1000000',
@@ -75,6 +79,17 @@ class GameSettingController extends Controller
 
             $options = is_array($setting->options) ? $setting->options : [];
             $options['show_ad'] = isset($input['show_ad']);
+
+            if ($key === 'tic_tac_toe') {
+                // No advertisement page for this game; everything else is a plain number.
+                $options['show_ad'] = false;
+                $options['online_fee_percent'] = isset($input['online_fee_percent']) && $input['online_fee_percent'] !== '' ? (int) $input['online_fee_percent'] : 10;
+                unset($options['points_online']);   // replaced by the fee percent
+                $options['ai_mistake_percent'] = isset($input['ai_mistake_percent']) && $input['ai_mistake_percent'] !== '' ? (int) $input['ai_mistake_percent'] : 25;
+                $options['move_seconds'] = isset($input['move_seconds']) && $input['move_seconds'] !== '' ? (int) $input['move_seconds'] : 60;
+                $options['room_minutes'] = isset($input['room_minutes']) && $input['room_minutes'] !== '' ? (int) $input['room_minutes'] : 10;
+                $options['block_same_ip'] = isset($input['block_same_ip']);
+            }
 
             if ($key === 'three_numbers') {
                 $prizes = [];

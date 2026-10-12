@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Photo;
+use App\Support\MediaUpload;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -24,15 +25,38 @@ class AdminMediasController extends Controller
 
     public function store(Request $request){
         $file = $request->file('file');
-        $name = time() .  $file->getClientOriginalName();
-        $file->move('images/media/', $name);
-        Photo::create(['file'=>$name]);
+
+        if (!$file) {
+            return response()->json(['error' => 'No file received.'], 422);
+        }
+
+        try {
+            // Saved in public/images/media (same place as the editor picker).
+            $photo = MediaUpload::store($file);
+        } catch (\InvalidArgumentException $e) {
+            return response()->json(['error' => $e->getMessage()], 422);
+        }
+
+        return response()->json(['file' => $photo->file, 'url' => MediaUpload::urlFor($photo->file)]);
     }
     
 
     public function destroy($id){
             $photo = Photo::findOrFail($id);
             $photo->delete();
+    }
+
+
+    /**
+     * ON  = pages show this file through a random, browser-bound link (/m/...).
+     * OFF = pages show the normal /public/images/media/<file name> link.
+     */
+    public function toggleRandomLink(Request $request, $id){
+        $photo = Photo::findOrFail($id);
+        $photo->random_link = $request->input('enabled') ? 1 : 0;
+        $photo->save();
+
+        return response()->json(['id' => $photo->id, 'random_link' => (int) $photo->random_link]);
     }
     
 

@@ -27,7 +27,12 @@
         text-decoration: none; border: 1.5px solid #e3e6ec; color: #6c7488; background: #fff;
     }
     .p2p-tab:hover { color: #0097ff; text-decoration: none; border-color: #0097ff; }
-    .p2p-tab.active { background: #0097ff; border-color: #0097ff; color: #fff; }
+        .p2p-tab.active { background: #0097ff; border-color: #0097ff; color: #fff; }
+    .p2p-searchbar { max-width: 1140px; margin: 0 auto 18px; }
+    .p2p-search-form { display: flex; background: #fff; border: 1.5px solid #e3e6ec; border-radius: 30px; overflow: hidden; box-shadow: 0 2px 10px rgba(20,30,60,0.05); }
+    .p2p-search-input { flex: 1; border: none; outline: none; padding: 12px 20px; font-size: 14px; background: transparent; }
+    .p2p-search-btn { border: none; background: #0097ff; color: #fff; padding: 0 22px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; }
+    .p2p-search-btn:hover { background: #0080e0; }
 </style>
 
 <div class="mk-wrap">
@@ -36,6 +41,22 @@
         <a href="{{ route('currency.index') }}" class="p2p-tab">Currency Exchange</a>
         <a href="{{ route('marketplace.index') }}" class="p2p-tab {{ request('type') !== 'auction' ? 'active' : '' }}">Marketplace</a>
         <a href="{{ route('marketplace.index', ['type' => 'auction']) }}" class="p2p-tab {{ request('type') === 'auction' ? 'active' : '' }}">Auctions</a>
+    </div>
+
+    <div class="p2p-searchbar">
+        <form method="GET" action="{{ route('marketplace.index') }}" class="p2p-search-form">
+            @foreach(request()->except(['q','page']) as $k => $v)
+                @if(is_array($v))
+                    @foreach($v as $vv)
+                        <input type="hidden" name="{{ $k }}[]" value="{{ $vv }}">
+                    @endforeach
+                @else
+                    <input type="hidden" name="{{ $k }}" value="{{ $v }}">
+                @endif
+            @endforeach
+            <input type="text" name="q" value="{{ request('q') }}" class="p2p-search-input" placeholder="Search listings...">
+            <button type="submit" class="p2p-search-btn"><i class="fa fa-search"></i></button>
+        </form>
     </div>
 
     <div class="mk-header">

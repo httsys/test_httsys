@@ -38,6 +38,12 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
+            // Random, visitor-bound media links. Deliberately WITHOUT the "web"
+            // middleware group, so serving images does not open a session.
+            Route::get('m/{token}', [\App\Http\Controllers\MediaFileController::class, 'show'])
+                ->where('token', '[A-Za-z0-9_\-]+')
+                ->name('media.file');
+
             Route::prefix('api')
                 ->middleware('api')
                 ->namespace($this->namespace)

@@ -13,10 +13,13 @@ class MarketplaceController extends Controller
 {
     public function index(Request $request)
     {
-        $listings = MarketplaceListing::with('seller', 'photo', 'bids')
+                $listings = MarketplaceListing::with('seller', 'photo', 'bids')
             ->where('status', 'active')
             ->when($request->filled('type'), function ($q) use ($request) {
                 $q->where('listing_type', $request->type);
+            })
+            ->when($request->filled('q'), function ($q) use ($request) {
+                $q->where('title', 'like', '%' . $request->q . '%');
             })
             ->orderByDesc('id')
             ->paginate(20)

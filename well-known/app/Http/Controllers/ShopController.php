@@ -40,6 +40,10 @@ class ShopController extends Controller
                 $q->whereIn('id', $brandSlugs);
             });
         }
+        
+                if ($request->filled('q')) {
+            $query->where('title', 'like', '%' . $request->q . '%');
+        }
 
         if ($request->filled('min_price')) {
             $query->where('price', '>=', $request->min_price);

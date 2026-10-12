@@ -34,7 +34,12 @@ class MediaViewController extends Controller
         return view('media.view', [
             'photo' => $photo,
             'type' => $type,
-            'url' => url('/public/images/media/' . $photo->file),
+            // Root-relative path (NOT url()): if this page is opened as
+            // /public/media/view/..., url() would prepend the request's
+            // base path again and produce /public/public/images/...,
+            // which 404s and breaks the video. rawurlencode handles
+            // spaces in file names.
+            'url' => '/public/images/media/' . rawurlencode($photo->file),
         ]);
     }
 }

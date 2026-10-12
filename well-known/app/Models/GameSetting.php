@@ -33,6 +33,7 @@ class GameSetting extends Model
         'flip_coin' => ['name' => 'Flip The Coin', 'slug' => 'flip-the-coin', 'tagline' => 'Pick a side and test your luck!'],
         'three_numbers' => ['name' => '3 Numbers', 'slug' => '3-numbers', 'tagline' => 'Spin the reels - the 3-digit number you land on is your points!'],
         'up_down' => ['name' => 'Up or Down', 'slug' => 'up-or-down', 'tagline' => 'Will the price finish higher or lower? Stake your points!'],
+        'tic_tac_toe' => ['name' => 'Tic Tac Toe', 'slug' => 'tic-tac-toe', 'tagline' => 'Beat the computer or challenge a friend - win points!'],
     ];
 
     /**
@@ -59,6 +60,14 @@ class GameSetting extends Model
             $options['min_stake'] = 1;
             $options['max_stake'] = 100;
             $options['payout_percent'] = 100;
+        } elseif ($key === 'tic_tac_toe') {
+            // Tic Tac Toe has no advertisement page: the match itself decides the result.
+            $options['show_ad'] = false;
+            $options['online_fee_percent'] = 10;  // % of the pot (both players' points) the site keeps from an online match
+            $options['ai_mistake_percent'] = 25;  // how often the computer plays a random move
+            $options['move_seconds'] = 60;        // time for each move in an online match
+            $options['room_minutes'] = 10;        // how long an unjoined room stays open
+            $options['block_same_ip'] = false;    // refuse two players on the same network
         }
 
         return $options;
@@ -117,7 +126,7 @@ class GameSetting extends Model
                 'name' => self::$games[$key]['name'],
                 'win_percent' => 30,
                 'win_block' => 100,
-                'hourly_limit' => 10,
+                'hourly_limit' => $key === 'tic_tac_toe' ? 30 : 10,
                 'points_per_win' => 1,
                 'is_active' => true,
                 'options' => self::defaultOptions($key),

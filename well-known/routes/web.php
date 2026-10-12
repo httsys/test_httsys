@@ -176,9 +176,18 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/mini-games/play/{play}/loaded', [\App\Http\Controllers\MiniGameController::class, 'adLoaded'])->name('games.loaded')->middleware('throttle:60,1');
     Route::post('/mini-games/play/{play}/question', [\App\Http\Controllers\MiniGameController::class, 'question'])->name('games.question')->middleware('throttle:60,1');
     Route::post('/mini-games/play/{play}/progress', [\App\Http\Controllers\MiniGameController::class, 'progress'])->name('games.progress')->middleware('throttle:120,1');
-Route::post('/mini-games/play/{play}/leave', [\App\Http\Controllers\MiniGameController::class, 'leave'])->name('games.leave')->middleware('throttle:30,1');
+    Route::post('/mini-games/play/{play}/leave', [\App\Http\Controllers\MiniGameController::class, 'leave'])->name('games.leave')->middleware('throttle:30,1');
     Route::post('/mini-games/play/{play}/answer', [\App\Http\Controllers\MiniGameController::class, 'answer'])->name('games.answer')->middleware('throttle:60,1');
     Route::post('/mini-games/{slug}/start', [\App\Http\Controllers\MiniGameController::class, 'start'])->name('games.start')->middleware('throttle:30,1');
+        // Tic Tac Toe (vs computer + online rooms)
+    Route::post('/mini-games/tic-tac-toe/match/ai', [\App\Http\Controllers\TicTacToeController::class, 'startAi'])->name('ttt.ai')->middleware('throttle:30,1');
+    Route::post('/mini-games/tic-tac-toe/match/room', [\App\Http\Controllers\TicTacToeController::class, 'createRoom'])->name('ttt.room')->middleware('throttle:30,1');
+    Route::post('/mini-games/tic-tac-toe/match/join', [\App\Http\Controllers\TicTacToeController::class, 'joinRoom'])->name('ttt.join')->middleware('throttle:30,1');
+    Route::get('/mini-games/tic-tac-toe/match/{id}/state', [\App\Http\Controllers\TicTacToeController::class, 'state'])->name('ttt.state')->where('id', '[0-9]+')->middleware('throttle:120,1');
+    Route::post('/mini-games/tic-tac-toe/match/{id}/move', [\App\Http\Controllers\TicTacToeController::class, 'move'])->name('ttt.move')->where('id', '[0-9]+')->middleware('throttle:90,1');
+    Route::post('/mini-games/tic-tac-toe/match/{id}/leave', [\App\Http\Controllers\TicTacToeController::class, 'leave'])->name('ttt.leave')->where('id', '[0-9]+')->middleware('throttle:30,1');
+    Route::post('/mini-games/tic-tac-toe/match/preview', [\App\Http\Controllers\TicTacToeController::class, 'previewRoom'])->name('ttt.preview')->middleware('throttle:60,1');
+    Route::post('/mini-games/tic-tac-toe/match/decline', [\App\Http\Controllers\TicTacToeController::class, 'declineRoom'])->name('ttt.decline')->middleware('throttle:30,1');
     Route::get('/my-orders', [\App\Http\Controllers\CheckoutController::class, 'myOrders'])->name('checkout.my-orders');
     Route::post('/checkout/coupon/apply', [\App\Http\Controllers\CheckoutController::class, 'applyCoupon'])->name('checkout.coupon.apply');
     Route::post('/checkout/coupon/remove', [\App\Http\Controllers\CheckoutController::class, 'removeCoupon'])->name('checkout.coupon.remove');
@@ -243,7 +252,10 @@ Route::middleware(['author'])->group(function () {
 
     Route::get('admin/marketplace-listings', [\App\Http\Controllers\AdminMarketplaceController::class, 'index'])->name('marketplace.admin.index')->middleware('permission:marketplace.manage');
     Route::post('admin/marketplace-listings/{listing}/close', [\App\Http\Controllers\AdminMarketplaceController::class, 'close'])->name('marketplace.admin.close')->middleware('permission:marketplace.manage');
-
+    Route::get('admin/media-check', [\App\Http\Controllers\MediaCheckController::class, 'index'])->name('media.check')->middleware('permission:content.media.manage');
+    Route::get('admin/media-picker', [\App\Http\Controllers\MediaPickerController::class, 'index'])->name('media.picker');
+    Route::post('admin/media-picker/upload', [\App\Http\Controllers\MediaPickerController::class, 'upload'])->name('media.picker.upload');
+    Route::post('admin/media-random-link/{id}', [AdminMediasController::class, 'toggleRandomLink'])->name('media.random-link')->middleware('permission:content.media.manage');
     Route::resource('admin/media', AdminMediasController::class)->middleware('permission:content.media.manage');
     Route::resource('admin/comments', \App\Http\Controllers\AdminCommentController::class)->only(['index', 'edit', 'update', 'destroy'])->parameters(['comments' => 'comment'])->middleware('permission:content.comments.manage');
     Route::resource('admin/products', \App\Http\Controllers\ProductController::class)->parameters(['products' => 'product'])->middleware('permission:shop.products.manage');

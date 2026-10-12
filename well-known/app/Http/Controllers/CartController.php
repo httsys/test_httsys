@@ -134,7 +134,7 @@ class CartController extends Controller
             return [
                 'key' => $line->key,
                 'title' => $line->product->title,
-                'image' => $line->product->photo ? '/public/images/media/' . $line->product->photo->file : '/public/img/200x200.png',
+                'image' => $line->product->photo ? \App\Support\MediaUrl::forFile($line->product->photo->file) : '/public/img/200x200.png',
                 'variant' => $line->variant_summary,
                 'unit_price' => number_format($line->unit_price, 2),
                 'quantity' => $line->quantity,

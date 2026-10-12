@@ -17,20 +17,16 @@
         // so admins can upload a new video/audio/image file (not just paste a URL).
         file_picker_types: 'image media file',
         file_picker_callback: function (callback, value, meta) {
-            var lfmType = (meta.filetype === 'image') ? 'image' : 'file';
-
-            // NOTE: the installed lfm package hardcodes its route prefix to
-            // "filemanager" in LaravelFilemanagerServiceProvider@boot -
-            // the 'prefix' key in config/lfm.php is NOT actually read.
+            // Opens the site's own media library (Admin > Media storage), so
+            // everything is saved in ONE folder: public/images/media.
             window.open(
-                '/filemanager?type=' + lfmType,
+                '{{ route('media.picker') }}?type=' + encodeURIComponent(meta.filetype || 'file'),
                 'FileManager',
                 'width=900,height=600'
             );
 
-            // lfm always calls SetUrl with an ARRAY of selected items (see
-            // getSelectedItems() in laravel-filemanager's script.js), even
-            // when only one file was picked.
+            // The picker calls SetUrl with an ARRAY of selected items
+            // ({url, name}), even when only one file was picked.
             window.SetUrl = function (items) {
                 if (!items || !items.length) { return; }
                 var item = items[0];

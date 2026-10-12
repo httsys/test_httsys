@@ -12,6 +12,7 @@ class Photo extends Model
     protected $fillable = [
         'file',
         'share_token',
+        'random_link',
     ];
 
     protected static function boot()
